@@ -1,0 +1,40 @@
+:root{
+  --bg:#0f1724;
+  --card:#0f1724;
+  --muted:#94a3b8;
+  --accent:#ff4d4f;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:linear-gradient(180deg,#071020 0%, #071428 60%);color:#e6eef8}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:linear-gradient(90deg,rgba(0,0,0,0.25),transparent);backdrop-filter:blur(6px)}
+.logo{font-weight:700;font-size:20px}
+.logo span{color:var(--accent);margin-left:6px}
+.search-wrap{display:flex;gap:8px;align-items:center;flex:1;max-width:640px;margin:0 20px}
+.search-wrap input{flex:1;padding:10px 14px;border-radius:8px;border:0;background:rgba(255,255,255,0.04);color:inherit}
+.search-wrap button{padding:10px 14px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+.nav-actions button{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--muted);cursor:pointer}
+.hero{height:56vh;background-size:cover;background-position:center;display:flex;align-items:flex-end}
+.hero-overlay{width:100%;background:linear-gradient(180deg,transparent,rgba(7,18,32,0.75));padding:28px}
+.hero h1{font-size:34px;margin:0 0 8px}
+.hero p{margin:0 0 12px;color:var(--muted);max-width:70%}
+.hero-actions button{margin-right:12px;padding:10px 16px;border-radius:8px;border:0;cursor:pointer}
+#playBtn{background:rgba(255,255,255,0.12);color:#fff}
+#favBtn{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--accent)}
+.movies-section{padding:20px 28px}
+.movies-section h2{margin:0 0 12px;font-size:18px}
+.movies-row{display:flex;gap:12px;overflow:auto;padding-bottom:6px}
+.movie-card{min-width:160px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .18s}
+.movie-card:hover{transform:translateY(-6px)}
+.poster{width:160px;height:240px;background:#091018;display:block}
+.movie-info{padding:8px}
+.movie-title{font-size:14px;margin:0 0 6px}
+.movie-meta{font-size:12px;color:var(--muted)}
+.rating{float:right;background:#081426;padding:2px 6px;border-radius:6px;color:#ffd166;font-weight:700}
+.site-footer{text-align:center;padding:20px;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+
+@media (max-width:720px){
+  .hero h1{font-size:22px}
+  .hero p{max-width:100%}
+  .poster{width:120px;height:180px}
+  .movie-card{min-width:120px}
+}

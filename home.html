@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MindX Cinema — Trang Chủ</title>
+    <link rel="stylesheet" href="home.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">MindX <span>Cinema</span></div>
+      <div class="search-wrap">
+        <input id="searchInput" placeholder="Tìm phim, diễn viên, thể loại..." />
+        <button id="searchBtn">Tìm</button>
+      </div>
+      <nav class="nav-actions">
+        <button id="loginBtn">Đăng nhập</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-overlay">
+          <h1 id="heroTitle">Phim hay hôm nay</h1>
+          <p id="heroOverview"></p>
+          <div class="hero-actions">
+            <button id="playBtn">▶ Phát</button>
+            <button id="favBtn">❤ Thêm yêu thích</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="movies-section">
+        <h2>Đang chiếu</h2>
+        <div class="movies-row" id="nowPlaying"></div>
+      </section>
+
+      <section class="movies-section">
+        <h2>Phổ biến</h2>
+        <div class="movies-row" id="popular"></div>
+      </section>
+
+      <section class="movies-section">
+        <h2>Đánh giá cao</h2>
+        <div class="movies-row" id="topRated"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">© 2026 MindX Cinema</footer>
+<iframe
+    src="https://www.chatbase.co/chatbot-iframe/c0vcIO-wsECaXDRWNCcKz"
+    width="100%"
+    style="height: 100%; min-height: 700px"
+    frameborder="0"
+    allow="microphone"
+></iframe>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="c0vcIO-wsECaXDRWNCcKz";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+<script>
+  // --- SERVER CODE ---
+const jwt = require('jsonwebtoken');
+
+const secret = process.env.CHATBOT_IDENTITY_SECRET; // Your chatbase secret key (should be stored as a secret not in the code)
+
+const user = await getSignedInUser(); // Get the current user signed in to your site
+
+const token = jwt.sign(
+    {
+        user_id: user.id, // Your user's id
+        email: user.email, // User's email
+        stripe_accounts: user.stripe_accounts, // User's stripe accounts for stripe integration
+        // ... other custom attributes
+    },
+    secret,
+    { expiresIn: '1h' }
+);
+
+// --- CLIENT CODE ---
+const token = await getUserToken(); // Get the token from your server
+window.chatbase('identify', { token }); // identify the user with Chatbase
+
+</script>
+
+    <script src="home.js" type="module"></script>
+  </body>
+</html>
