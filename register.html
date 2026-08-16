@@ -1,42 +1,68 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
-<head>
+  <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Đăng ký</title>
-
     <link rel="stylesheet" href="register.css">
-</head>
-<body>
-
-<div class="container">
-
-    <div class="box">
-
-        <h2>Đăng ký</h2>
-
-        <input id="username" placeholder="Username">
-
-        <input id="email" type="email" placeholder="Email">
-
-        <input id="password" type="password" placeholder="Password">
-
-        <button onclick="register()">Đăng ký</button>
-
-        <p>Đã có tài khoản?</p>
-
-        <a href="login.html">
-            <button class="change">Đăng nhập</button>
-        </a>
-
+    <link rel="stylesheet" href="chat-widget.css">
+  </head>
+  <body class="auth-page">
+    <div class="auth-shell">
+      <a class="auth-back-link" href="home.html">← Về trang chủ</a>
+      <div class="auth-card">
+        <div class="auth-card-body">
+          <div class="auth-badge">MindX Cinema</div>
+          <h1>Đăng ký</h1>
+          <p>Đăng ký tài khoản để lưu lại lịch sử phim, nhận ưu đãi và truy cập nhanh hơn.</p>
+          <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+          <label class="auth-field">
+            <span>Họ và tên</span>
+            <input id="username" type="text" placeholder="Nguyễn Văn A">
+          </label>
+          <label class="auth-field">
+            <span>Email</span>
+            <input id="email" type="email" placeholder="name@example.com">
+          </label>
+          <label class="auth-field">
+            <span>Mật khẩu</span>
+            <input id="password" type="password" placeholder="••••••••">
+          </label>
+          <button id="registerBtn" class="auth-btn" type="button">Đăng ký</button>
+          <div class="auth-actions">
+            <span>Đã có tài khoản?</span>
+            <a class="auth-link" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+        <div class="auth-visual">
+          <div class="auth-visual-card">
+            <h3>Đăng ký để bắt đầu</h3>
+            <p>Nhận trải nghiệm phim mượt mà, theo dõi bộ phim yêu thích và có thể đăng nhập lại bất cứ lúc nào.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="worm">
-        🐛
+    <footer class="site-footer">© 2026 MindX Cinema</footer>
+
+    <button class="chat-widget-bubble" title="Trợ giúp từ AI">
+      <span>💬</span>
+      <span>Trợ giúp</span>
+    </button>
+
+    <div class="chat-widget-modal" role="dialog" aria-label="Trợ giúp AI">
+      <div class="chat-widget-header">
+        <h3>MindX Assistant</h3>
+        <button class="chat-widget-close" type="button" aria-label="Đóng">×</button>
+      </div>
+      <div class="chat-widget-messages"></div>
+      <div class="chat-widget-input">
+        <input type="text" placeholder="Nhập câu hỏi...">
+        <button type="button">Gửi</button>
+      </div>
     </div>
 
-</div>
-
-<script src="register.js"></script>
-
-</body>
+    <script src="register.js"></script>
+    <script src="chat-widget.js"></script>
+  </body>
 </html>

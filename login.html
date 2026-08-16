@@ -1,40 +1,64 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
-<head>
+  <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Đăng nhập</title>
     <link rel="stylesheet" href="login.css">
-</head>
-<body>
-
-<div class="container">
-
-    <div class="box">
-        <h2>Đăng nhập</h2>
-
-        <input id="email" type="email" placeholder="Email">
-
-        <input id="password" type="password" placeholder="Mật khẩu">
-
-        <button onclick="login()">Login</button>
-
-        <p>Chưa có tài khoản?</p>
-
-        <a href="register.html">
-            <button class="change">Đăng ký</button>
-        </a>
-
+    <link rel="stylesheet" href="chat-widget.css">
+  </head>
+  <body class="auth-page">
+    <div class="auth-shell">
+      <a class="auth-back-link" href="home.html">← Về trang chủ</a>
+      <div class="auth-card">
+        <div class="auth-card-body">
+          <div class="auth-badge">MindX Cinema</div>
+          <h1>Đăng nhập</h1>
+          <p>Chào mừng trở lại! Vui lòng nhập thông tin để tiếp tục khám phá phim mới.</p>
+          <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+          <label class="auth-field">
+            <span>Email</span>
+            <input id="email" type="email" placeholder="name@example.com">
+          </label>
+          <label class="auth-field">
+            <span>Mật khẩu</span>
+            <input id="password" type="password" placeholder="••••••••">
+          </label>
+          <button id="loginBtn" class="auth-btn" type="button">Đăng nhập</button>
+          <div class="auth-actions">
+            <span>Chưa có tài khoản?</span>
+            <a class="auth-link" href="register.html">Đăng ký ngay</a>
+          </div>
+        </div>
+        <div class="auth-visual">
+          <div class="auth-visual-card">
+            <h3>Phim mới mỗi tuần</h3>
+            <p>Khám phá những bộ phim hot, các suất chiếu sắp tới và nhiều ưu đãi độc quyền dành riêng cho thành viên.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="worm">
-        🐛
+    <footer class="site-footer">© 2026 MindX Cinema</footer>
+
+    <button class="chat-widget-bubble" title="Trợ giúp từ AI">
+      <span>💬</span>
+      <span>Trợ giúp</span>
+    </button>
+
+    <div class="chat-widget-modal" role="dialog" aria-label="Trợ giúp AI">
+      <div class="chat-widget-header">
+        <h3>MindX Assistant</h3>
+        <button class="chat-widget-close" type="button" aria-label="Đóng">×</button>
+      </div>
+      <div class="chat-widget-messages"></div>
+      <div class="chat-widget-input">
+        <input type="text" placeholder="Nhập câu hỏi...">
+        <button type="button">Gửi</button>
+      </div>
     </div>
 
-</div>
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="c0vcIO-wsECaXDRWNCcKz";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
-<script src="login.js"></script>
-
-</body>
+    <script src="login.js"></script>
+    <script src="chat-widget.js"></script>
+  </body>
 </html>
